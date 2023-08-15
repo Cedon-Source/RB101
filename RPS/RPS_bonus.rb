@@ -4,6 +4,7 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
+# Win conditions set out in a rather long complicated way.
 def win?(first, second)
   (first == 'rock' && second == 'scissors') ||
     (first == 'paper' && second == 'rock') ||
@@ -27,6 +28,7 @@ def display_result(player, computer)
   end
 end
 
+# Keeps score of wins in a session.
  def score_calc(player, computer, player_score, computer_score)
    if win?(player, computer)
      player_score += 1
@@ -44,6 +46,10 @@ def winner(player_score, computer_score)
   end
 end
 
+# Actual engine of the program, ensures play choice is acceptable,
+# randomly selects a competing choice, and runs it through the methods
+# above.  Breaks if the player no longer wants to play or if either
+# the computer or player win 3 times in a session. 
 player_score = 0
 computer_score = 0
 loop do
