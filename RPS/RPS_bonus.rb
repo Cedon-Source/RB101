@@ -4,7 +4,7 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-# Win conditions set out in a rather long complicated way.
+# Win conditions set out in a rather long, complicated way.
 def win?(first, second)
   (first == 'rock' && second == 'scissors') ||
     (first == 'paper' && second == 'rock') ||
@@ -82,3 +82,14 @@ loop do
 end
 
 prompt("Thank you for playing, goodbye!")
+
+
+# winning_condition = {
+#   'rock': ['scissors', 'lizard'],
+#   'paper': ['rock', 'spock'],
+#   'scissors': ['paper', 'lizard'],
+#   'lizard': ['spock', 'paper'],
+#   'spock': ['scissors', 'rock']
+# }
+#
+# def winning_condition()
